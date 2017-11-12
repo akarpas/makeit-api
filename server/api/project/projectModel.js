@@ -5,7 +5,8 @@ const projectSchema = new Schema({
   type: {
     type: String,
     enum: ['film', 'photo', 'other', 'none'],
-    default: 'none'
+    default: 'none',
+    required: true
   },
   title: {
     type: String,
@@ -50,7 +51,8 @@ const projectSchema = new Schema({
   budgetAvailability: {
     type: String,
     enum: ['yes', 'no', 'tbd'],
-    default: 'tbd'
+    default: 'tbd',
+    required: true
   },
   budget: {
     type: Number,
