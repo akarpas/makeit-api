@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
+  username: String,
   userid: String,
   name: String,
   lastname: String,
@@ -50,7 +51,7 @@ const userSchema = new Schema({
     flickr: String,
     fivehundredpx: String,
     website: String
-  },{
+  },
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
