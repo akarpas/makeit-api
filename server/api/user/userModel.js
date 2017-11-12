@@ -2,17 +2,61 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-  username: String,
-  userid: String,
-  name: String,
-  lastname: String,
-  email: String,
-  password: String,
-  dateOfBirth: new Date(),
-  postCode: String,
-  city: String,
-  country: String,
-  phone: String,
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  userid: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  name: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  lastname: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  dateOfBirth: {
+    type: Date,
+    required: true,
+    unique: false
+  },
+  postCode: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  city: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  country: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  phone: {
+    type: Number,
+    required: true,
+    unique: true
+  },
   skills: {
     type: String,
     enum: [
@@ -42,13 +86,9 @@ const userSchema = new Schema({
     default: 'none'
   },
   references: {
-    facebook: String,
-    instagram: String,
-    vimeo: String,
-    youtube: String,
-    flickr: String,
-    fivehundredpx: String,
-    website: String
+    type: Array,
+    required: false,
+    unique: false
   },
   timestamps: {
     createdAt: 'created_at',
